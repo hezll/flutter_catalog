@@ -1,4 +1,5 @@
 buildscript {
+    ext.kotlin_version = '1.2.71'
     repositories {
         google()
         jcenter()
@@ -6,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.google.gms:google-services:4.0.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -14,12 +15,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-    }
-    // Add the "force" resulation strategy to fix problems building the app.
-    // Cf. https://stackoverflow.com/a/52962449.
-    configurations.all {
-        resolutionStrategy.force 'androidx.exifinterface:exifinterface:1.0.0'
-
     }
 }
 
